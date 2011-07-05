@@ -2,16 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * FedoraConnector Omeka plugin allows users to reuse content managed in
- * institutional repositories in their Omeka repositories.
- *
- * The FedoraConnector plugin provides methods to generate calls against Fedora-
- * based content disemminators. Unlike traditional ingestion techniques, this
- * plugin provides a facade to Fedora-Commons repositories and records pointers
- * to the "real" objects rather than creating new physical copies. This will
- * help ensure longer-term durability of the content streams, as well as allow
- * you to pull from multiple institutions with open Fedora-Commons
- * respositories.
+ * Instantiate the test suite, gather test directories and files.
  *
  * PHP version 5
  *
@@ -24,38 +15,32 @@
  * language governing permissions and limitations under the License.
  *
  * @package     omeka
- * @subpackage  fedoraconnector
- * @author      Scholars' Lab <>
- * @author      Ethan Gruber <ewg4x@virginia.edu>
- * @author      Adam Soroka <ajs6f@virginia.edu>
- * @author      Wayne Graham <wayne.graham@virginia.edu>
- * @author      Eric Rochester <err8n@virginia.edu>
+ * @subpackage  theplugin
+ * @author      Organization <>
+ * @author      Author McAuthor <author.mcauthor@virginia.edu>
  * @copyright   2010 The Board and Visitors of the University of Virginia
  * @license     http://www.apache.org/licenses/LICENSE-2.0.html Apache 2 License
  * @version     $Id$
  * @link        http://omeka.org/add-ons/plugins/FedoraConnector/
  * @tutorial    tutorials/omeka/FedoraConnector.pkg
  */
+?>
 
-require_once 'FedoraConnector_Test_AppTestCase.php';
+<?php
 
-/**
- * Test suite for FedoraConnector.
- *
- * @package   Omeka
- * @copyright 2010 The Board and Visitors of the University of Virginia
- */
-class FedoraConnector_AllTests extends PHPUnit_Framework_TestSuite
+require_once 'ThePlugin_Test_AppTestCase.php';
+
+class ThePlugin_AllTests extends PHPUnit_Framework_TestSuite
 {
 
     /**
      * This constructs the test suite for the FedoraConnector plugin.
      *
-     * @return FedoraConnector_AllTests The test suites.
+     * @return PHPUnit_Runner_IncludePathTestCollector The test suites.
      */
     public static function suite() {
 
-        $suite = new FedoraConnector_AllTests('FedoraConnector Tests');
+        $suite = new ThePlugin_AllTests('ThePlugin Tests');
 
         $testCollector = new PHPUnit_Runner_IncludePathTestCollector(
             array(

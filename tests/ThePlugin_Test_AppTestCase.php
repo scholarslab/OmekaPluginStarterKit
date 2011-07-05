@@ -2,16 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * FedoraConnector Omeka plugin allows users to reuse content managed in
- * institutional repositories in their Omeka repositories.
- *
- * The FedoraConnector plugin provides methods to generate calls against Fedora-
- * based content disemminators. Unlike traditional ingestion techniques, this
- * plugin provides a facade to Fedora-Commons repositories and records pointers
- * to the "real" objects rather than creating new physical copies. This will
- * help ensure longer-term durability of the content streams, as well as allow
- * you to pull from multiple institutions with open Fedora-Commons
- * respositories.
+ * Set up each test, define helpers to mock data.
  *
  * PHP version 5
  *
@@ -24,29 +15,29 @@
  * language governing permissions and limitations under the License.
  *
  * @package     omeka
- * @subpackage  fedoraconnector
- * @author      Scholars' Lab <>
- * @author      Ethan Gruber <ewg4x@virginia.edu>
- * @author      Adam Soroka <ajs6f@virginia.edu>
- * @author      Wayne Graham <wayne.graham@virginia.edu>
- * @author      Eric Rochester <err8n@virginia.edu>
+ * @subpackage  theplugin
+ * @author      Organization <>
+ * @author      Author McAuthor <author.mcauthor@virginia.edu>
  * @copyright   2010 The Board and Visitors of the University of Virginia
  * @license     http://www.apache.org/licenses/LICENSE-2.0.html Apache 2 License
  * @version     $Id$
  * @link        http://omeka.org/add-ons/plugins/FedoraConnector/
  * @tutorial    tutorials/omeka/FedoraConnector.pkg
  */
+?>
 
-require_once '../FedoraConnectorPlugin.php';
+<?php
+
+require_once '../ThePlugin.php';
 
 /**
  * This class sets up the system for testing this plugin.
  *
  * This borrows from the SimplePages plugin rather extensively.
  */
-class FedoraConnector_Test_AppTestCase extends Omeka_Test_AppTestCase
+class ThePlugin_Test_AppTestCase extends Omeka_Test_AppTestCase
 {
-    const PLUGIN_NAME = 'FedoraConnector';
+    const PLUGIN_NAME = 'ThePlugin';
 
     public function setUp() {
 
@@ -67,39 +58,9 @@ class FedoraConnector_Test_AppTestCase extends Omeka_Test_AppTestCase
 
     public function _addPluginHooksAndFilters($pluginBroker, $pluginName) {
 
-        // Set the current plugin so the add_plugin_hook function works.
         $pluginBroker->setCurrentPluginDirName($pluginName);
 
-        new FedoraConnectorPlugin;
-
-    }
-
-    public function _createItem($name)
-    {
-
-        $item = new Item;
-        $item->featured = 0;
-        $item->public = 1;
-        $item->save();
-
-        $element_text = new ElementText;
-        $element_text->record_id = $item->id;
-        $element_text->record_type_id = 2;
-        $element_text->element_id = 50;
-        $element_text->html = 0;
-        $element_text->text = $name;
-        $element_text->save();
-
-        return $item;
-
-    }
-
-    public function _createItems($count)
-    {
-
-        for ($i=0; $i<$count; $i++) {
-            $this->_createItem('TestingItem' . $i);
-        }
+        new ThePlugin;
 
     }
 

@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * Instantiate the core plugin class, define constants, include scripts.
+ * Integration test for a controller.
  *
  * PHP version 5
  *
@@ -28,13 +28,35 @@
 
 <?php
 
-// {{{ constants
-// define('THE_PLUGIN_VERSION', get_plugin_ini('FedoraConnector', 'version'));
-// define('THE_PLUGIN_DIR', dirname(__FILE__));
-// }}}
+class ThePlugin_ActionsuiteControllerTest extends Omeka_Test_AppTestCase
+{
 
-// {{{ requires
-// require_once FEDORA_CONNECTOR_PLUGIN_DIR . '/ThePlugin.php';
-// }}}
+    public function setUp()
+    {
 
-// new ThePlugin;
+        parent::setUp();
+        $this->helper = new ThePlugin_Test_AppTestCase;
+        $this->helper->setUp();
+        $this->db = get_db();
+
+    }
+
+    // public function testSomething()
+    // {
+
+    //     $this->dispatch('route');
+    //     $this->assertController()
+    //     $this->assertAction();
+    //     $this->assertModule();
+    //     $this->assertEquals();
+    //     $this->assertQueryContentContains('div', 'string');
+
+    //     $this->request->setMethod('POST')
+    //         ->setPost(array(
+    //             'name' => 'value'
+    //         )
+    //     );
+
+    // }
+
+}

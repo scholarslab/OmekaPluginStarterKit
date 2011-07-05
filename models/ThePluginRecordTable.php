@@ -2,7 +2,10 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * Instantiate the core plugin class, define constants, include scripts.
+ * A model class that represents the behavior of an entire collection of
+ * records of type Record. Put methods here that operate on the whole
+ * group of records contained in the table, not just an individual
+ * record.
  *
  * PHP version 5
  *
@@ -28,13 +31,34 @@
 
 <?php
 
-// {{{ constants
-// define('THE_PLUGIN_VERSION', get_plugin_ini('FedoraConnector', 'version'));
-// define('THE_PLUGIN_DIR', dirname(__FILE__));
-// }}}
+class ThePluginRecordTable extends Omeka_Db_Table
+{
 
-// {{{ requires
-// require_once FEDORA_CONNECTOR_PLUGIN_DIR . '/ThePlugin.php';
-// }}}
+    /**
+     * For example, perform a difficult or convoluted select on the
+     * table in a method in this class, instead of doing it in the view
+     * action.
+     *
+     * @param string $parameter A query attribute.
+     *
+     * @return array of Omeka_record objects The records.
+     */
+    // public function getRecordsWithSomeGnarlyCombinationOfAttributes()
+    // {
 
-// new ThePlugin;
+            // $select = $this->select()->
+            // return $this->fetchObjects($select);
+
+    // }
+
+}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
+
+?>

@@ -2,16 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * FedoraConnector Omeka plugin allows users to reuse content managed in
- * institutional repositories in their Omeka repositories.
- *
- * The FedoraConnector plugin provides methods to generate calls against Fedora-
- * based content disemminators. Unlike traditional ingestion techniques, this
- * plugin provides a facade to Fedora-Commons repositories and records pointers
- * to the "real" objects rather than creating new physical copies. This will
- * help ensure longer-term durability of the content streams, as well as allow
- * you to pull from multiple institutions with open Fedora-Commons
- * respositories.
+ * Configuration form.
  *
  * PHP version 5
  *
@@ -24,13 +15,9 @@
  * language governing permissions and limitations under the License.
  *
  * @package     omeka
- * @subpackage  fedoraconnector
- * @author      Scholars' Lab <>
- * @author      Ethan Gruber <ewg4x@virginia.edu>
- * @author      Adam Soroka <ajs6f@virginia.edu>
- * @author      Wayne Graham <wayne.graham@virginia.edu>
- * @author      Eric Rochester <err8n@virginia.edu>
- * @author      David McClure <david.mcclure@virginia.edu>
+ * @subpackage  theplugin
+ * @author      Organization <>
+ * @author      Author McAuthor <author.mcauthor@virginia.edu>
  * @copyright   2010 The Board and Visitors of the University of Virginia
  * @license     http://www.apache.org/licenses/LICENSE-2.0.html Apache 2 License
  * @version     $Id$
@@ -41,13 +28,10 @@
 
 <div class="field">
 
-    <label for="fedora_connector_server">Omitted Datastreams:</label>
+    <label for="the_plugin">Label For Option:</label>
+    <textarea name="the_input_name" id="the_input_name" rows="3" cols="40"><?php echo get_option('the_plugin_the_option'); ?></textarea>
 
-    <textarea name="fedora_connector_omitted_datastreams" id="fedora_connector_omitted_datastreams" rows="3" cols="40"><?php echo get_option('fedora_connector_omitted_datastreams'); ?></textarea>
-
-    <p class="explanation">List datastream IDs, comma-separated, that should be 
-        omitted from the datastream selection checkbox list and object metadata 
-        dropdown menu. Default: RELS-EXT,RELS-INT,AUDIT.</p>
+    <p class="explanation">Small gray text to describe the option.</p>
 
 </div>
 

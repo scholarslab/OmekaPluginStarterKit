@@ -2,16 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * FedoraConnector Omeka plugin allows users to reuse content managed in
- * institutional repositories in their Omeka repositories.
- *
- * The FedoraConnector plugin provides methods to generate calls against Fedora-
- * based content disemminators. Unlike traditional ingestion techniques, this
- * plugin provides a facade to Fedora-Commons repositories and records pointers
- * to the "real" objects rather than creating new physical copies. This will
- * help ensure longer-term durability of the content streams, as well as allow
- * you to pull from multiple institutions with open Fedora-Commons
- * respositories.
+ * Procedural helper functions that don't fit well into model classes.
  *
  * PHP version 5
  *
@@ -24,13 +15,9 @@
  * language governing permissions and limitations under the License.
  *
  * @package     omeka
- * @subpackage  fedoraconnector
- * @author      Scholars' Lab <>
- * @author      Ethan Gruber <ewg4x@virginia.edu>
- * @author      Adam Soroka <ajs6f@virginia.edu>
- * @author      Wayne Graham <wayne.graham@virginia.edu>
- * @author      Eric Rochester <err8n@virginia.edu>
- * @author      David McClure <david.mcclure@virginia.edu>
+ * @subpackage  theplugin
+ * @author      Organization <>
+ * @author      Author McAuthor <author.mcauthor@virginia.edu>
  * @copyright   2010 The Board and Visitors of the University of Virginia
  * @license     http://www.apache.org/licenses/LICENSE-2.0.html Apache 2 License
  * @version     $Id$

@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * Instantiate the core plugin class, define constants, include scripts.
+ * A controller.
  *
  * PHP version 5
  *
@@ -28,13 +28,41 @@
 
 <?php
 
-// {{{ constants
-// define('THE_PLUGIN_VERSION', get_plugin_ini('FedoraConnector', 'version'));
-// define('THE_PLUGIN_DIR', dirname(__FILE__));
-// }}}
+class ThePlugin_ActionsuiteController extends Omeka_Controller_Action
+{
 
-// {{{ requires
-// require_once FEDORA_CONNECTOR_PLUGIN_DIR . '/ThePlugin.php';
-// }}}
+    /**
+     * Redirect by to a semantic action.
+     *
+     * @return void
+     */
+    public function indexAction()
+    {
 
-// new ThePlugin;
+        // $this->_forward('theaction', 'actionsuite', 'the-plugin');
+
+    }
+
+    /**
+     * Do stuff.
+     *
+     * @return void
+     */
+    // public function theactionAction()
+    // {
+
+
+    // }
+
+}
+
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
+
+?>

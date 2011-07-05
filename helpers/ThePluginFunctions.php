@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4; */
 
 /**
- * Instantiate the core plugin class, define constants, include scripts.
+ * Procedural helper functions that don't fit well into model classes.
  *
  * PHP version 5
  *
@@ -28,13 +28,14 @@
 
 <?php
 
-// {{{ constants
-// define('THE_PLUGIN_VERSION', get_plugin_ini('FedoraConnector', 'version'));
-// define('THE_PLUGIN_DIR', dirname(__FILE__));
-// }}}
+/**
+ * Do work.
+ *
+ * @return void.
+ */
+// function pluginhelpers_doSomething()
+// {
 
-// {{{ requires
-// require_once FEDORA_CONNECTOR_PLUGIN_DIR . '/ThePlugin.php';
-// }}}
 
-// new ThePlugin;
+
+// }
